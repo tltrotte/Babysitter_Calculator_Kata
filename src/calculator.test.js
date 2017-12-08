@@ -1,4 +1,4 @@
-import {time, beforeBedPay, bedTimePay} from "./calculator";
+import {time, beforeBedPay, bedTimePay, afterMidnightPay} from "./calculator";
 
 
 
@@ -32,6 +32,14 @@ it('should return 24 if start time is 6pm  and bedtime is 8pm and endTime 11pm',
   });
 it('should return 16 if start time is 6pm  and bedtime is 6pm endTime 8pm', function() {
        expect(bedTimePay(18, 18, 20)).toBe(16);
-  });    
-
+  });
+it('should return 24 if start time is 8pm  and bedtime is 6pm endTime 11pm', function() {
+       expect(bedTimePay(20, 18, 23)).toBe(24);
+  });
+});
+//This test makes the calculation for midnight pay hours.
+describe('afterMidnightPay function', function(){
+   it('should return 48 if start time is midnight and end is 3am', function() {
+     expect(afterMidnightPay(0, 3)).toBe(48);
+   });
 });

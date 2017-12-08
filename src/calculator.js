@@ -44,7 +44,7 @@
       return 0;
     }
   }
-// This is the function used to calculate the hours during sleeping. 
+// This is the function used to calculate the hours during sleeping.
   export function bedTimePay(startTime, bedTime, endTime)
    {
      if(bedTime > startTime && bedTime < shift.midnight && bedTime <= endTime)
@@ -61,3 +61,14 @@
        return 0;
      }
    }
+
+   //This is the Function that calculates the pay for hours after midnight.
+
+   export function afterMidnightPay (startTime, endTime ) {
+     if(startTime=== 0 || startTime >shift.end && endTime <= shift.end){
+       return endTime * payPerHour.afterMidnight;
+     }
+      else {
+        return 0;
+      }
+    }
