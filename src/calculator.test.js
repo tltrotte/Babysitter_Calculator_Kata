@@ -10,4 +10,8 @@ describe("time function", function(){
   it('the type of time should equal a number', function() {
      expect(typeof(time('10:45'))).toEqual('number');
    });
+//This test makes sure that the time is returned as its self
+  it('should return 10 when time is 10:00)', function() {
+    expect(time('10:00')).toBe(10);
+  });
 });
