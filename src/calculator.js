@@ -44,3 +44,20 @@
       return 0;
     }
   }
+// This is the function used to calculate the hours during sleeping. 
+  export function bedTimePay(startTime, bedTime, endTime)
+   {
+     if(bedTime > startTime && bedTime < shift.midnight && bedTime <= endTime)
+     {
+       return ((endTime-bedTime) * payPerHour.whenSleeping);
+
+     } else if(bedTime === startTime && endTime <= shift.midnight){
+       return ((endTime - startTime) * payPerHour.whenSleeping);
+     } else if (bedTime <= startTime && endTime > shift.midnight){
+       return  ((shift.midnight - startTime) * payPerHour.whenSleeping);
+   }else if(bedTime <= startTime && endTime <= shift.midnight){
+     return ((endTime - startTime) * payPerHour.whenSleeping);
+   } else {
+       return 0;
+     }
+   }

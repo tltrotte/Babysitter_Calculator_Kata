@@ -1,4 +1,4 @@
-import {time, beforeBedPay} from "./calculator";
+import {time, beforeBedPay, bedTimePay} from "./calculator";
 
 
 
@@ -24,4 +24,14 @@ describe("beforeBedPay function", function(){
 it('should return $36 if start time is 5pm and bedtime is 8pm', function() {
      expect(beforeBedPay(17, 20)).toBe(36);
   });
-    });
+});
+//This test makes the calculation for bed time hours
+describe("bedTime function", function(){
+it('should return 24 if start time is 6pm  and bedtime is 8pm and endTime 11pm', function() {
+     expect(bedTimePay(18, 20, 23)).toBe(24);
+  });
+it('should return 16 if start time is 6pm  and bedtime is 6pm endTime 8pm', function() {
+       expect(bedTimePay(18, 18, 20)).toBe(16);
+  });    
+
+});
