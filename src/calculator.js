@@ -13,6 +13,10 @@
    end: 4,
  };
 
+ // var startTime = time(startTime);
+ // var bedTime = time(bedTime);
+ // var endTime = time(endTime);
+
 
  //This Function Formats the time correctly as well as set the expectaions of time returned on a 24 hour clock for this application.
 
@@ -29,3 +33,14 @@
        return hour;
  	}
  }
+ // This is the function used to calculate the hours before Bed.
+ export function beforeBedPay(startTime, bedTime)
+  {
+    if(bedTime > startTime && bedTime < shift.midnight)
+    {
+      return ((bedTime - startTime) * payPerHour.beforeSleep);
+
+    } else if(bedTime <= startTime){
+      return 0;
+    }
+  }
