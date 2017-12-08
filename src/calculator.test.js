@@ -41,8 +41,12 @@ describe('afterMidnightPay function', function() {
     expect(afterMidnightPay(10, 2)).toBe(32);
   });
 });
+//This test is the final test that takes everything above and make sure that they are in sync
 describe('total cost for baby sitter', function() {
   it('should return 72 if start time is 9, bedtime is 11pm, and end is 3am', function() {
     expect(finalPay("21:00", "23:00", "3:00")).toBe(72);
+  });
+  it('should return 72 if start time is 9, bedtime is 11pm, and end is 3am', function() {
+    expect(finalPay("20:30", "22:14", "3:00")).toBe(72);
   });
 });
